@@ -93,6 +93,9 @@ $app->GET('/api/login', "WorkerLogin::login" );
  * Notes: Return list of groups
  * Output-Formats: [application/json]
  */
+
+header("Access-Control-Allow-Origin: http://localhost:8000");
+
 $app->GET('/api/user', "WorkerUser::userInfo" );
 $app->GET('/api/groups', "WorkerGroup::groups" );
 $app->GET('/api/groupInfo', "WorkerGroup::groupInfo" );

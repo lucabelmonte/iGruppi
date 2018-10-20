@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import './Header.css';
 import {
     Collapse,
     Navbar,
@@ -11,7 +12,9 @@ import {
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
-    DropdownItem } from 'reactstrap';
+	DropdownItem,
+	Badge
+ } from 'reactstrap';
 
 export default class Header extends Component {
 
@@ -34,34 +37,19 @@ export default class Header extends Component {
 	render() {
 	return (
 		<div>
-		<Navbar color="dark" dark expand="lg">
-			<NavbarBrand href="/">reactstrap</NavbarBrand>
+		<Navbar className="header" color="dark" dark expand="lg">
+			<NavbarBrand className="text-centered" href="/">
+				<h1>IGRUPPI</h1>
+			</NavbarBrand>
 			<NavbarToggler onClick={this.toggle} />
 			<Collapse isOpen={this.state.isOpen} navbar>
 			<Nav className="ml-auto" navbar>
-					<NavItem>
-					<NavLink href="/components/">Components</NavLink>
-					</NavItem>
-					<NavItem>
-					<NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
-					</NavItem>
-					<UncontrolledDropdown nav inNavbar>
-					<DropdownToggle nav caret>
-							Options
-					</DropdownToggle>
-					<DropdownMenu right>
-							<DropdownItem>
-							Option 1
-							</DropdownItem>
-							<DropdownItem>
-							Option 2
-							</DropdownItem>
-							<DropdownItem divider />
-							<DropdownItem>
-							Reset
-							</DropdownItem>
-					</DropdownMenu>
-					</UncontrolledDropdown>
+				<NavItem>
+					<NavLink href="/components/">Login</NavLink>
+				</NavItem>
+				<NavItem>
+					<NavLink href="https://github.com/reactstrap/reactstrap">Registrati</NavLink>
+				</NavItem>
 			</Nav>
 		</Collapse>
 		</Navbar>

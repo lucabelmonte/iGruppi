@@ -1,0 +1,14 @@
+.header{
+  min-height:50px !important;
+}
+
+.header h1{
+  margin: 0;
+  padding: 0;
+  }
+
+
+.nav-link{
+  color:white !important;
+  font-size: 20px !important;
+}

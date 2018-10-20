@@ -46,7 +46,7 @@ require_once 'MyFw/ControllerFront.php';
 // Create application, bootstrap, and run
 $application = new MyFw_ControllerFront(
     APPLICATION_ENV,
-    APPLICATION_PATH . '/config/application.ini'
+    APPLICATION_PATH . 'config/application.ini'
 );
 $application->bootstrap_api();
 

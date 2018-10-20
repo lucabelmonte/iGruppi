@@ -5,7 +5,7 @@ export default class Register extends Component{
     constructor(props) {
         super(props);
         this.state = {
-          modal: false
+          modal: true
         };
     
         this.toggle = this.toggle.bind(this);
@@ -18,14 +18,14 @@ export default class Register extends Component{
       }
 
     render(props){
-      <div>
-      <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+      return(
+
       <Modal isOpen={this.state.modal} toggle={this.toggle}>
         <ModalHeader toggle={this.toggle}>Registrati ne I GRUPPI</ModalHeader>
         <ModalBody>
           <Input type="text" id="firstname" name="firstname" placeholder="Nome" />
           <Input type="text" id="surname" name="surname" placeholder="Cognome" />
-          //Bisogna mettere il fatto che la provincia é formata da solo 2 lettere e deve essere controllata
+          {/*Bisogna mettere il fatto che la provincia é formata da solo 2 lettere e deve essere controllata*/}
           <InputGroup>
             <InputGroupAddon addonType="prepend">
                 <InputGroupText>Via</InputGroupText>
@@ -42,7 +42,7 @@ export default class Register extends Component{
           <Button color="secondary" onClick={this.toggle}>Cancel</Button>
         </ModalFooter>
       </Modal>
-    </div>
+      );
     }
 };
 

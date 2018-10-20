@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './Header.css';
+import Login from './Login';
+import {Route} from 'react-router';
+import {Link} from 'react-router-dom'
+import Register from './Register';
+
 import {
     Collapse,
     Navbar,
@@ -45,10 +50,12 @@ export default class Header extends Component {
 			<Collapse isOpen={this.state.isOpen} navbar>
 			<Nav className="ml-auto" navbar>
 				<NavItem>
-					<NavLink href="/components/">Login</NavLink>
+					<NavLink><Link to="/login">Login</Link></NavLink>
+					<Route path="/login" component={Login} />
 				</NavItem>
 				<NavItem>
-					<NavLink href="https://github.com/reactstrap/reactstrap">Registrati</NavLink>
+					<NavLink><Link to="/register">Registrati</Link>
+            		<Route path="/register" component={Register} /></NavLink>
 				</NavItem>
 			</Nav>
 		</Collapse>

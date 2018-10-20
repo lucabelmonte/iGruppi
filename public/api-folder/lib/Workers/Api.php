@@ -11,6 +11,7 @@ class Api {
       $ret = ["status"=>"KO", "error" => $retval];  
     }
     // TODO:: look for format parameter in payload and serve xml
+    header('Access-Control-Allow-Origin: http://localhost:3000');
     header('Content-Type: application/json');
     echo json_encode($ret);
     exit;

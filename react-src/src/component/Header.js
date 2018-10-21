@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import logo from './../logo.svg';
 import './Header.css';
-import Login from '../pages/Login';
-import {Route} from 'react-router';
 import {Link} from 'react-router-dom'
-import Register from '../pages/Register';
 
 import {
     Collapse,
@@ -13,12 +9,7 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-		DropdownItem,
-		Badge
+    NavLink
  } from 'reactstrap';
 
 export default class Header extends Component {
@@ -52,11 +43,9 @@ export default class Header extends Component {
 			<Nav className="ml-auto" navbar>
 				<NavItem>
 					<NavLink to="/login">Login</NavLink>
-					<Route path="/login" component={<Login loginHandler={this.props.logCallback}/>} />
 				</NavItem>
 				<NavItem>
 					<NavLink><Link to="/register">Registrati</Link></NavLink>
-            		<Route path="/register" component={Register} />
 				</NavItem>
 			</Nav>
 		</Collapse>

@@ -11,12 +11,12 @@ import Center from '../component/DivCenter';
 
 
 export default class Login extends Component{
-    render(){
+    render(props){
       return(
         <div>
           <Header />
           <Center size={8} offset={2}>
-            <Form>
+            <Form onSubmit={this.props.loginHandler}>
               <FormGroup>
                 <Label for="exampleEmail">Email</Label>
                 <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
@@ -28,6 +28,7 @@ export default class Login extends Component{
               
               <Button>Submit</Button>
             </Form>
+            {this.props.error}
           </Center>
           <Footer />
         </div>

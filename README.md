@@ -30,5 +30,7 @@ Per iniziare ad usare l'applicativo è necessario creare un dominio virtuale che
 Ringraziamenti
 --------------
 Ringrazio mia moglie Elisa per avermi fatto conoscere il mondo dei Gruppi di acquisto.
+ 
+swagger path http://localhost:8888/api/explorer/index.html
 
  

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './../logo.svg';
 import './Header.css';
-import Login from './Login';
+import Login from '../pages/Login';
 import {Route} from 'react-router';
 import {Link} from 'react-router-dom'
-import Register from './Register';
+import Register from '../pages/Register';
 
 import {
     Collapse,
@@ -17,8 +17,8 @@ import {
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
-	DropdownItem,
-	Badge
+		DropdownItem,
+		Badge
  } from 'reactstrap';
 
 export default class Header extends Component {

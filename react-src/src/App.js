@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import './Header';
-import Header from './Header';
-import Footer from './Footer';
+import './component/Header';
 import Landing from './Landing';
-import Axios from 'axios';
+import Index from './pages/index'
+
+import { BrowserRouter } from 'react-router-dom'
+import { Route, Switch } from 'react-router';
+
 
 
 class App extends Component {
@@ -33,20 +35,18 @@ class App extends Component {
 
   getLoginData(usr,psw){
     alert("ciao");
-    axios.get("/api/login",{
-      email:usr,
-      passwd:psw
-    })
+    // axios.get("/api/login",{
+    //   email:usr,
+    //   passwd:psw
+    // })
   }
 
   render() {
     let isLogged = this.state.isLogger;
     return (
-      <div className="App">
-      {isLogged ? null : <Header logCallback={this.loginHandler}/>}
-      {isLogged ? null : <Landing/>}
-      <Footer/>
-      </div>
+      <Switch>
+        <Route exact path='/' component={Index} />
+      </Switch>
     );
   }
 }

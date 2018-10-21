@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Input, Form  } from 'reactstrap';
 import Register from './Register';
 import {Route} from 'react-router';
 import {Link} from 'react-router-dom'

@@ -4,7 +4,7 @@ class WorkerGroup {
 
   static function groups($request, $response, $args) {
     Api::setPayload($request->getQueryParams());
-    Api::checkUserToken();
+    // Api::checkUserToken();
 
     $gObj = new Model_Db_Groups();
     $data = $gObj->getAll();
@@ -15,8 +15,11 @@ class WorkerGroup {
     } else {
         $data = [];
     }
-
-    Api::result("OK", ["data" => $data]);
+    $newr = [];
+    foreach( $data as $r ) {
+      $newr[] = Api::decorateRec("groups", $r);
+    }
+    Api::result("OK", ["data" => $newr]);
   }
   static function groupInfo($request, $response, $args) {
     Api::setPayload($request->getQueryParams());
@@ -24,7 +27,8 @@ class WorkerGroup {
 
     $gObj = new Model_Db_Groups();
     $rec = $gObj->getGroupById(Api::getUserField("idgroup"));
-    Api::result("OK", ["data" => $rec]);
+
+    Api::result("OK", ["data" => Api::decorateRec("groups", $rec)]);
   }
   static function groupUsers($request, $response, $args) {
     Api::setPayload($request->getQueryParams());
@@ -32,6 +36,11 @@ class WorkerGroup {
 
     $gObj = new Model_Db_Groups();
     $rec = $gObj->getGroupFoundersById(Api::getUserField("idgroup"));
-    Api::result("OK", ["data" => $rec]);
+
+    $newr = [];
+    foreach( $rec as $r ) {
+        $newr[] = Api::decorateRec("groups", $r);
+    }
+    Api::result("OK", ["data" => $newr]);
   }
 }

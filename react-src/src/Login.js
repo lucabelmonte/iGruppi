@@ -26,8 +26,8 @@ export default class Login extends Component{
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Login I GRUPPI</ModalHeader>
           <ModalBody>
-            <Input type="email" id="username" name="username" placeholder="Email" />
-            <Input type="password" id="password" name="password" placeholder="Password" />
+              <Input class="form-input" type="email" id="username" name="username" placeholder="Email" />
+              <Input class="form-input" type="password" id="password" name="password" placeholder="Password" />
           </ModalBody>
           <ModalFooter>
             <Button color="primary" onClick={this.props.LoginHandler}>Login</Button>

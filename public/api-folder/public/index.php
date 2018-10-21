@@ -46,7 +46,7 @@ require_once 'MyFw/ControllerFront.php';
 // Create application, bootstrap, and run
 $application = new MyFw_ControllerFront(
     APPLICATION_ENV,
-    APPLICATION_PATH . 'config/application.ini'
+    APPLICATION_PATH . '/config/application.ini'
 );
 $application->bootstrap_api();
 
@@ -55,7 +55,9 @@ include("../lib/Workers/Login.php");
 include("../lib/Workers/Groups.php");
 include("../lib/Workers/Produttori.php");
 include("../lib/Workers/Users.php");
-
+include("../lib/Workers/Orders.php");
+include("../lib/Workers/Products.php");
+include("../lib/Workers/Meta.php");
 // include("index_swagger.php");
 
 /**
@@ -93,9 +95,6 @@ $app->GET('/api/login', "WorkerLogin::login" );
  * Notes: Return list of groups
  * Output-Formats: [application/json]
  */
-
-header("Access-Control-Allow-Origin: http://localhost:8000");
-
 $app->GET('/api/user', "WorkerUser::userInfo" );
 $app->GET('/api/groups', "WorkerGroup::groups" );
 $app->GET('/api/groupInfo', "WorkerGroup::groupInfo" );
@@ -103,6 +102,12 @@ $app->GET('/api/groupUsers', "WorkerGroup::groupUsers" );
 $app->GET('/api/produttori', "WorkerProduttori::produttori" );
 $app->GET('/api/produttoriInfo', "WorkerProduttori::produttoriInfo" );
 $app->GET('/api/produttoriProducts', "WorkerProduttori::produttoriProducts" );
-
+$app->GET('/api/orders', "WorkerOrders::orders" );
+$app->GET('/api/orderInfo', "WorkerOrders::orderInfo" );
+$app->GET('/api/orderDelivery', "WorkerOrders::orderDelivery" );
+$app->GET('/api/products', "WorkerProducts::products" );
+$app->GET('/api/productInfo', "WorkerProducts::productsInfo" );
+$app->GET('/api/metaSet', "WorkerMeta::metaSet" );
+$app->GET('/api/metaDelete', "WorkerMeta::metaDelete" );
 
 $app->run();

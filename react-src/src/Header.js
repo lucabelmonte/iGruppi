@@ -29,6 +29,7 @@ export default class Header extends Component {
 			this.state = {
 				isOpen: false
 			};
+
 	}
 
 
@@ -37,9 +38,6 @@ export default class Header extends Component {
 			isOpen: !this.state.isOpen
 		});
 	}
-
-	
-
 
 
 	render() {
@@ -54,7 +52,7 @@ export default class Header extends Component {
 			<Nav className="ml-auto" navbar>
 				<NavItem>
 					<NavLink to="/login">Login</NavLink>
-					<Route path="/login" component={Login} />
+					<Route path="/login" component={<Login loginHandler={this.props.logCallback}/>} />
 				</NavItem>
 				<NavItem>
 					<NavLink><Link to="/register">Registrati</Link></NavLink>

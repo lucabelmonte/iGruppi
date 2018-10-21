@@ -12,6 +12,7 @@ export default class Login extends Component{
         };
     
         this.toggle = this.toggle.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
       }
 
       toggle() {
@@ -20,22 +21,31 @@ export default class Login extends Component{
         });
       }
 
+      handleSubmit(event){
+
+        alert("cd");
+        this.props.loginHandler(event);
+        this.toggle();
+      }
+
     render(props){
       return(
 
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Login I GRUPPI</ModalHeader>
-          <ModalBody>
-              <Input class="form-input" type="email" id="username" name="username" placeholder="Email" />
-              <Input class="form-input" type="password" id="password" name="password" placeholder="Password" />
-          </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={this.props.LoginHandler}>Login</Button>
-            <Button color="secondary" onClick={this.toggle}>Chiudi</Button>
-            <div className="g-signin2" data-onsuccess="onSignIn"></div>
-            <p>oppure <Link to="/register">Registrati</Link></p>
-            <Route path="/register" component={Register} />
-          </ModalFooter>
+          <Form id="log-form">
+            <ModalBody>
+                <Input type="text" id="username" name="username" placeholder="Email" />
+                <Input type="password" id="password" name="password" placeholder="Password" />
+            </ModalBody>
+            <ModalFooter>
+              <Button onClick={this.handleSubmit} color="primary">Login</Button>
+              <Button color="secondary" onClick={this.toggle}>Chiudi</Button>
+              <div className="g-signin2" data-onsuccess="onSignIn"></div>
+              <p>oppure <Link to="/register">Registrati</Link></p>
+              <Route path="/register" component={Register} />
+            </ModalFooter>
+          </Form>
         </Modal>
       )
     }

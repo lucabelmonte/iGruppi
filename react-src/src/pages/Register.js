@@ -1,48 +1,94 @@
 import React, { Component } from 'react';
-import { InputGroup, InputGroupText, InputGroupAddon, Button, Modal, ModalHeader, ModalBody, ModalFooter, Input } from 'reactstrap';
+import { Link } from 'react-router-dom'
 
-export default class Register extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-          modal: true
-        };
-    
-        this.toggle = this.toggle.bind(this);
-      }
+import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-      toggle() {
-        this.setState({
-          modal: !this.state.modal
-        });
-      }
 
-    render(props){
+import Header from '../component/Header';
+import Footer from '../component/Footer';
+import Center from '../component/DivCenter';
+
+
+
+export default class Login extends Component{
+    render(){
       return(
-
-      <Modal isOpen={this.state.modal} toggle={this.toggle}>
-        <ModalHeader toggle={this.toggle}>Registrati ne I GRUPPI</ModalHeader>
-        <ModalBody>
-          <Input type="text" id="firstname" name="firstname" placeholder="Nome" />
-          <Input type="text" id="surname" name="surname" placeholder="Cognome" />
-          {/*Bisogna mettere il fatto che la provincia é formata da solo 2 lettere e deve essere controllata*/}
-          <InputGroup>
-            <InputGroupAddon addonType="prepend">
-                <InputGroupText>Via</InputGroupText>
-            </InputGroupAddon>
-            <Input type="text" id="indirizzo" name="indirizzo" placeholder="Indirizzo" />
-          </InputGroup>
-          <Input type="text" id="localita" name="localita" placeholder="Localitá" />
-          <Input type="text" id="provincia" name="provincia" placeholder="Provincia" />
-          <Input type="email" id="username" name="username" placeholder="EMail" />
-          <Input type="password" id="password" name="password" placeholder="Password" />
-          <div className="g-signin2" data-onsuccess="onSignIn"></div>
-        </ModalBody>
-        <ModalFooter>
-          <Button color="primary" onClick={this.props.RegisterHandler}>Login</Button>
-          <Button color="secondary" onClick={this.toggle}>Chiudi</Button>
-        </ModalFooter>
-      </Modal>
+        <div>
+          <Header />
+          <Center size={8} offset={2}>
+            <Form>
+              <FormGroup>
+                <Label for="exampleEmail">Email</Label>
+                <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
+              </FormGroup>
+              <FormGroup>
+                <Label for="examplePassword">Password</Label>
+                <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
+              </FormGroup>
+              <FormGroup>
+                <Label for="exampleSelect">Select</Label>
+                <Input type="select" name="select" id="exampleSelect">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </Input>
+              </FormGroup>
+              <FormGroup>
+                <Label for="exampleSelectMulti">Select Multiple</Label>
+                <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </Input>
+              </FormGroup>
+              <FormGroup>
+                <Label for="exampleText">Text Area</Label>
+                <Input type="textarea" name="text" id="exampleText" />
+              </FormGroup>
+              <FormGroup>
+                <Label for="exampleFile">File</Label>
+                <Input type="file" name="file" id="exampleFile" />
+                <FormText color="muted">
+                  This is some placeholder block-level help text for the above input.
+                  It's a bit lighter and easily wraps to a new line.
+          </FormText>
+              </FormGroup>
+              <FormGroup tag="fieldset">
+                <legend>Radio Buttons</legend>
+                <FormGroup check>
+                  <Label check>
+                    <Input type="radio" name="radio1" />{' '}
+                    Option one is this and that—be sure to include why it's great
+            </Label>
+                </FormGroup>
+                <FormGroup check>
+                  <Label check>
+                    <Input type="radio" name="radio1" />{' '}
+                    Option two can be something else and selecting it will deselect option one
+            </Label>
+                </FormGroup>
+                <FormGroup check disabled>
+                  <Label check>
+                    <Input type="radio" name="radio1" disabled />{' '}
+                    Option three is disabled
+            </Label>
+                </FormGroup>
+              </FormGroup>
+              <FormGroup check>
+                <Label check>
+                  <Input type="checkbox" />{' '}
+                  Check me out
+          </Label>
+              </FormGroup>
+              <Button>Submit</Button>
+            </Form>
+          </Center>
+          <Footer />
+        </div>
       );
     }
 };

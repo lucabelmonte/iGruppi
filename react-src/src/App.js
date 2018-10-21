@@ -9,6 +9,8 @@ import { Route, Switch } from 'react-router';
 import Landing from './Landing';
 import Index from './pages/index';
 import Login from './pages/Login';
+import Register from './pages/Register';
+
 
 class App extends Component {
   constructor(props){
@@ -35,9 +37,9 @@ class App extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={this.state.isLogged ? Landing : Index} />
-          <Route exact path='/login' component={(props)=> {
-            return (<Login />)
-          }} />
+          <Route exact path='/login' component={Login}/>
+          <Route exact path='/register' component={Register} />
+
         </Switch>
       </BrowserRouter>
      

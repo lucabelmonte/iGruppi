@@ -32,7 +32,7 @@ export default class Login extends Component{
           <ModalFooter>
             <Button color="primary" onClick={this.props.LoginHandler}>Login</Button>
             <Button color="secondary" onClick={this.toggle}>Chiudi</Button>
-            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+            <div className="g-signin2" data-onsuccess="onSignIn"></div>
             <p>oppure <Link to="/register">Registrati</Link></p>
             <Route path="/register" component={Register} />
           </ModalFooter>

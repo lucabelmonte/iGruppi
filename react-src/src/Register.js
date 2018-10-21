@@ -36,10 +36,11 @@ export default class Register extends Component{
           <Input type="text" id="provincia" name="provincia" placeholder="Provincia" />
           <Input type="email" id="username" name="username" placeholder="EMail" />
           <Input type="password" id="password" name="password" placeholder="Password" />
+          <div className="g-signin2" data-onsuccess="onSignIn"></div>
         </ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={this.props.RegisterHandler}>Login</Button>
-          <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+          <Button color="secondary" onClick={this.toggle}>Chiudi</Button>
         </ModalFooter>
       </Modal>
       );

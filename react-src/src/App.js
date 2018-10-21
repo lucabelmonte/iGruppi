@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import './Header';
 import Header from './Header';
+import Footer from './Footer';
 
 
 class App extends Component {
@@ -18,7 +19,7 @@ class App extends Component {
     return (
       <div className="App">
       <Header/>
-      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+      <Footer/>
       </div>
     );
   }

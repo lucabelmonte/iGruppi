@@ -1,0 +1,25 @@
+.car-img{
+    width:640px;
+    height:360px;
+}
+
+.carousel-item > img{
+    max-width: 100%;
+    height: auto;
+    opacity: 0.6 !important;
+    filter: alpha(opacity=50) !important; /* For IE8 and earlier */
+}
+
+
+
+.carousel-caption{
+    top: 50%;
+    transform: translateY(-50%);
+    bottom:initial !important;
+    color:black;
+}
+
+.item {
+    background-size:contain;
+    background-position: 50% 50%;
+  }
